@@ -1,0 +1,15 @@
+jQuery hoverIntent Live
+=============
+
+We use this library jquery plugin to keep hoverIntent plugin working on injected (append-ed) Element. 
+
+Usage
+-------
+
+How to use : 
+Same as jquery hoverIntent standar by [Brian Cherne](http://cherne.net/brian/resources/jquery.hoverIntent.html)
+
+
+Original Plugin
+-------
+[jQuery hoverIntent](http://cherne.net/brian/resources/jquery.hoverIntent.html)
