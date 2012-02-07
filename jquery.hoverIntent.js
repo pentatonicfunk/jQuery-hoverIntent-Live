@@ -1,4 +1,5 @@
 /**
+* THIS PLUGIN MODIFIED WITH https://github.com/pentatonicfunk/ FOR SPECIFIC USE
 * hoverIntent is similar to jQuery's built-in "hover" function except that
 * instead of firing the onMouseOver event immediately, hoverIntent checks
 * to see if the user's mouse has slowed down (beneath the sensitivity
