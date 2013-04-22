@@ -1,12 +1,23 @@
-jQuery hoverIntent Live
+jQuery hoverIntent Live (DEPRECATED)
 =============
 
-We use this library jquery plugin to keep hoverIntent plugin working on injected (append-ed) Element. 
+ANNOUNCEMENT :
+-------
+since hoverIntent r7, this plugin only work on jquery < 1.7,
+so if you are using jquery above 1.7, use http://cherne.net/brian/resources/jquery.hoverIntent.html
+this repository will no longer recieve update from now on.
+
+
+
+Deprecated
+-------
+
+We use this library jquery plugin to keep hoverIntent plugin working on injected (append-ed) Element.
 
 Usage
 -------
 
-How to use : 
+How to use :
 Same as jquery hoverIntent standar by [Brian Cherne](http://cherne.net/brian/resources/jquery.hoverIntent.html)
 
 

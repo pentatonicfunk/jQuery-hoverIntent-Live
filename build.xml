@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<project name="Header Build" default="build" basedir="">
+
+   <!-- ant-contrib -->
+   <taskdef resource="net/sf/antcontrib/antcontrib.properties">
+      <classpath>
+         <pathelement location="lib/ant-contrib-1.0b3.jar" />
+      </classpath>
+   </taskdef>
+
+
+   <!--
+   *************************************************
+   * STAGES                                        *
+   *************************************************
+   -->
+
+   <!-- build for defaul -->
+   <target name="build-hvi">
+      <property file="build-hvi.properties" />
+      <antcall target="build" />
+   </target>
+
+
+   <!--
+   *************************************************
+   * BUILD MODES                                   *
+   *************************************************
+   -->
+
+   <!-- default build -->
+   <target name="build" description="Build sequence.">
+      <antcall target="-prebuild-js" />
+   </target>
+
+
+   <!--
+   *************************************************
+   * PRIVATE TASKS                                 *
+   *************************************************
+   -->
+
+   <target name="-prebuild-js">
+      <!-- cleaning-up prebuild directory -->
+      <echo message="Cleaning-up prebuild directory..." />
+      <delete dir="${dir.prebuild}" excludes="${file.excludes}" />
+
+      <!-- compress javascript files -->
+      <echo message="Compress javascript file..." />
+      <apply executable="java" parallel="false" dest="${dir.prebuild}">
+         <fileset dir="${dir.source}">
+            <include name="**/*.js" />
+         </fileset>
+         <arg line="-jar" />
+         <arg path="lib/${lib.yuicompressor}" />
+         <arg line="-o" />
+         <mapper type="identity" />
+         <targetfile />
+         <srcfile />
+      </apply>
+
+</target>
+</project>

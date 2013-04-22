@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+<script src="./min/jquery.hoverIntent.js" ></script>
+<title>Insert title here</title>
+<style type="text/css" media="screen">
+            /* styles for the demo examples -- NOT REQUIRED for hoverIntent to work, just for demo purposes */
+        #RESOURCES #main .demo li { padding-bottom: 0; }
+        ul.demo {display:block; width:100%; height:75px; padding:0; margin:0; background:#9cc; list-style-type:none;}
+        ul.demo li {background:#fcc; display:block; width:25%; height:50px; padding:0; margin:0; float: left; position:relative; overflow:hidden; cursor:default;  font-size:0.9em; line-height:1.1em;}
+        ul.demo li.p2 {background:#ffc;}
+        ul.demo li.p3 {background:#cfc;}
+        ul.demo li.p4 {background:#ccf;}
+        ul.demo li span { display:block; margin:4px; background:#eef; cursor:default;}
+    </style>
+</head>
+<body>
+<ul class="demo" id="demo1">
+            <li class="p1">&nbsp;</li>
+            <li class="p2">&nbsp;</li>
+            <li class="p3">&nbsp;</li>
+            <li class="p4"><span>hover ignores over/out events from children</span></li>
+        </ul>
+        <br/>
+        <br/>
+        <button class="js-new-li">add new LI</button>
+</body>
+<script type="text/javascript">
+$(document).ready(function(){
+   $("#demo1 li").hoverIntent( makeTall, makeShort );
+   $("body").hoverIntent( makeTall, makeShort , '#demo2 li');
+
+   $('.js-new-li').on('click', function(e){
+      html = '<ul class="demo" id="demo2">'+
+          '<li class="p1">&nbsp;</li>' +
+          '<li class="p2">&nbsp;</li>' +
+          '<li class="p3">&nbsp;</li>' +
+          '<li class="p4"><span>hover ignores over/out events from children</span></li>' +
+      '</ul>';
+      $('body').append(html);
+   });
+});
+function makeTall(){$(this).animate({"height":75},200);}
+function makeShort(){$(this).animate({"height":50},200);}
+</script>
+</html>
